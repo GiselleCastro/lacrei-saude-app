@@ -12,10 +12,10 @@ export function Header() {
                 </a>
                 <nav>
                     <button>
-                        <a href="/about">Quem Somos</a>
+                        <a href="/quem-somos">Quem Somos</a>
                     </button>
                     <button className="help">
-                        <a href="/help">Ajuda</a>
+                        <a href="/ajuda">Ajuda</a>
                     </button>
                     <button className="login">
                         <a href="">
@@ -30,7 +30,7 @@ export function Header() {
                 </a>
                 <nav>
                     <button className="help">
-                        <a href="/help"><Help /></a>
+                        <a href="/ajuda"><Help /></a>
                     </button>
                     <button className="login">
                         <a href="">

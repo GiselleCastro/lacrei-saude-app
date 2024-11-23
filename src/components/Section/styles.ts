@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SectionContainer = styled.section`
+export const SectionContainer = styled.div`
 margin: 4rem 0;
 
 h1 {

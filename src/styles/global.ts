@@ -14,6 +14,10 @@ export const GlobalStyles = createGlobalStyle`
     box-shadow: none;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     display: flex;
     align-items: center;

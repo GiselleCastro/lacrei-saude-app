@@ -1,5 +1,4 @@
 import { FooterContainer, FooterGrid } from "./styles"
-import { v4 as uuid } from 'uuid';
 import Facebook from '../../../public/assets/facebook.svg'
 import Instagram from '../../../public/assets/instagram.svg'
 import Linkedin from '../../../public/assets/linkedin.svg'
@@ -8,63 +7,51 @@ import Up from '../../../public/assets/up.svg'
 
 const linksFooter = [
     {
-        id: uuid(),
         title: "Lacrei Saúde",
         linkList: [
             {
-                id: uuid(),
                 title: "Quem Somos",
-                url: "/about"
+                url: "/quem-somos"
             },
             {
-                id: uuid(),
                 title: "Nosso Propósito",
-                url: "/about"
+                url: "/quem-somos"
             },
             {
-                id: uuid(),
                 title: "Missão, Visão e Valor",
-                url: "/about"
+                url: "/quem-somos"
             },
             {
-                id: uuid(),
                 title: "Acessibilidade",
-                url: "/about"
+                url: "/quem-somos"
             }
         ]
     },
     {
-        id: uuid(),
         title: "Saúde",
         linkList: [
             {
-                id: uuid(),
                 title: "Buscar atendimento",
-                url: "/help"
+                url: "/ajuda"
             },
             {
-                id: uuid(),
                 title: "Oferecer atendimento",
-                url: "/help"
+                url: "/ajuda"
             },
         ]
     },
     {
-        id: uuid(),
         title: "Segurança e Privacidade",
         linkList: [
             {
-                id: uuid(),
                 title: "Política de Privacidade",
                 url: "/"
             },
             {
-                id: uuid(),
                 title: "Termos de uso",
                 url: "/"
             },
             {
-                id: uuid(),
                 title: "Direitos de Titular",
                 url: "/"
             },
@@ -107,9 +94,9 @@ export function Footer() {
             </div>
             <div className="columnLinks item2">
                 {linksFooter.map(col => {
-                    return <div key={col.id} className="links">
+                    return <div key={col.title} className="links">
                         {col.title}
-                        {col.linkList.map(link => <a href={link.url} key={link.id}>{link.title}</a>)}
+                        {col.linkList.map(link => <a href={link.url} key={link.title}>{link.title}</a>)}
                     </div>
                 })}
             </div>

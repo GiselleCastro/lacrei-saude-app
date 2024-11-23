@@ -1,4 +1,3 @@
-'use client';
 import { SectionContainer } from "./styles";
 
 interface SectionProps {

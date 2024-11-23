@@ -137,6 +137,7 @@ width: 100%;
 
     .login {
         background: ${props => props.theme["green-400"]};
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px 0px;
 
         a {
             display:flex;
