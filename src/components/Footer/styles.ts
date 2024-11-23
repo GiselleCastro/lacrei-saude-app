@@ -78,6 +78,7 @@ export const FooterGrid = styled.div`
 
         @media (max-width: 860px) {
             grid-template-columns: repeat(2, 1fr);
+            gap: 0rem;
             row-gap: 36px
         }
     }
@@ -85,7 +86,7 @@ export const FooterGrid = styled.div`
     .socialMedia {
         display:flex;
         padding-top: 3rem;
-        gap: 12px;
+        gap: 24px;
         svg {
             stroke: ${props => props.theme["green-400"]};
             height: 32px;
