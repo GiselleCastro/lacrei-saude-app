@@ -1,5 +1,6 @@
 'use client';
 import dynamic from 'next/dynamic';
+import { useEffect } from 'react';
 
 const Section = dynamic(() => import('@/components/Section')
     .then(result => result.Section), { ssr: false });
@@ -20,6 +21,10 @@ const texts = [
 ]
 
 export default function About() {
+    useEffect(() => {
+        document.title = 'Quem somos | Lacrei Saúde'
+    })
+
     return (texts.map(text => {
         return < Section {...text} key={text.title} />
     })

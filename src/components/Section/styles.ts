@@ -13,7 +13,7 @@ h1 {
 .bar {
     height: 2px;
     width: 160px;
-    border: 2px solid ${props => props.theme["green-400"]}
+    border: 1px solid ${props => props.theme["green-400"]}
 }
 
 .content {
@@ -33,5 +33,19 @@ img {
     width: calc(max(40%, 25rem));
 }
 
+@media (max-width: 860px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 36px
+    }
 
+    p {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+    }
+}
 `

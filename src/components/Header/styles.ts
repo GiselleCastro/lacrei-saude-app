@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.header`
+export type ShowOptionsLoginType = {
+    showOptionsLogin: boolean;
+}
+
+export const HeaderContainer = styled.header.withConfig({
+    shouldForwardProp: (props) => props !== 'showOptionsLogin', 
+  })<ShowOptionsLoginType>`
+  
 height: 6rem;
 background: linear-gradient(180deg, #F5FFFB 31.04%, #FFFFFF 100%);
 display: flex;
@@ -64,7 +71,7 @@ width: 100%;
         }
 
         .login {
-            background: ${props => props.theme["green-400"]};
+            background: ${props => props.showOptionsLogin ? props.theme["green-500"] : props.theme["green-400"]};
             width: 10.75rem;
 
             a {
@@ -136,7 +143,7 @@ width: 100%;
     }
 
     .login {
-        background: ${props => props.theme["green-400"]};
+        background: ${props => props.showOptionsLogin ? props.theme["green-500"] : props.theme["green-400"]};
         box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px 0px;
 
         a {

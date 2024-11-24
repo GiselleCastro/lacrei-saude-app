@@ -1,11 +1,9 @@
 'use client';
 import { Nunito } from 'next/font/google'
 import { GlobalStyles } from "@/styles/global";
-import Layout from "@/components/layout";
-import { ThemeProvider } from "styled-components";
+import { Layout } from "@/components/layout";
+import { StyleSheetManager, ThemeProvider } from "styled-components";
 import { defaultTheme } from "@/styles/themes/defaultTheme";
-import Head from "next/head";
-import favicon from "../../public/favicon.ico"
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -15,16 +13,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={nunito.className}>
-      <Head>
-        <link rel="icon" href={favicon.src} />
-      </Head>
+    <html lang="pt-BR" className={nunito.className}>
       <body>
         <ThemeProvider theme={defaultTheme}>
-          <GlobalStyles />
-          <Layout>
-            {children}
-          </Layout>
+          <StyleSheetManager shouldForwardProp={() => true}>
+            <GlobalStyles />
+            <Layout>
+              {children}
+            </Layout>
+          </StyleSheetManager>
         </ThemeProvider>
       </body>
     </html>
