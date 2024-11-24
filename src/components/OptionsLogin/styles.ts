@@ -21,15 +21,14 @@ export const OptionsLoginContainer = styled.div.withConfig({
     flex-direction: column;
     padding: 0 14px;
 
-    right: calc(7.5rem);
-
+    left: calc(50% + min(1440px, 100%)/2 - 13.25rem - 7.5rem);
 
     @media (max-width: 1024px) {
-        right: calc(2rem);
+        left: calc(100% - 2rem - 13.25rem);
     }
 
     @media (max-width: 860px) {
-        right: calc(1.5rem);
+        left: calc(100% - 1.5rem - 13.25rem);
     }
 
     .bar {

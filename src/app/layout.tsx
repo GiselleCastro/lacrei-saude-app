@@ -4,6 +4,7 @@ import { GlobalStyles } from "@/styles/global";
 import { Layout } from "@/components/layout";
 import { StyleSheetManager, ThemeProvider } from "styled-components";
 import { defaultTheme } from "@/styles/themes/defaultTheme";
+import StyledComponentsRegistry from '@/lib/registry';
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -15,14 +16,16 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={nunito.className}>
       <body>
-        <ThemeProvider theme={defaultTheme}>
-          <StyleSheetManager shouldForwardProp={() => true}>
+        <StyledComponentsRegistry>
+          <ThemeProvider theme={defaultTheme}>
             <GlobalStyles />
-            <Layout>
-              {children}
-            </Layout>
-          </StyleSheetManager>
-        </ThemeProvider>
+            <StyleSheetManager shouldForwardProp={() => true}>
+              <Layout>
+                {children}
+              </Layout>
+            </StyleSheetManager>
+          </ThemeProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
