@@ -5,6 +5,7 @@ import Person from "../../../public/assets/person.svg"
 import { OptionsLogin } from "../OptionsLogin"
 import { useState } from "react"
 import { FormEvent } from "react"
+import Link from "next/link"
 
 export function Header() {
     const [showOptionsLogin, setShowOptionsLogin] = useState(false)
@@ -18,35 +19,35 @@ export function Header() {
         <>
             <HeaderContainer showOptionsLogin={showOptionsLogin}>
                 <div className="desktop">
-                    <a href="/">
+                    <Link href="/">
                         <img src="https://lacreisaude.com.br/_next/static/media/logo_lacrei_desktop.7ae004ab.svg" alt="LS Lacrei Saúde" />
-                    </a>
+                    </Link>
                     <nav>
                         <button>
-                            <a href="/quem-somos">Quem Somos</a>
+                            <Link href="/quem-somos">Quem Somos</Link>
                         </button>
                         <button className="help">
-                            <a href="/ajuda">Ajuda</a>
+                            <Link href="/ajuda">Ajuda</Link>
                         </button>
                         <button className="login" onClick={handlerShowOptionsLogin}>
-                            <a href="">
+                            <Link href="">
                                 Entrar <Down />
-                            </a>
+                            </Link>
                         </button>
                     </nav>
                 </div>
                 <div className="mobile">
-                    <a href="/">
+                    <Link href="/">
                         <img src="https://lacreisaude.com.br/_next/static/media/logo_lacrei_mobile.1f3a65cb.svg" alt="LS Lacrei Saúde" />
-                    </a>
+                    </Link>
                     <nav>
                         <button className="help">
-                            <a href="/ajuda"><Help /></a>
+                            <Link href="/ajuda"><Help /></Link>
                         </button>
                         <button className="login" onClick={handlerShowOptionsLogin}>
-                            <a href="">
+                            <Link href="">
                                 <Person />
-                            </a>
+                            </Link>
                         </button>
                     </nav>
                 </div>

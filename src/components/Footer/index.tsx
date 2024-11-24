@@ -4,6 +4,7 @@ import Instagram from '../../../public/assets/instagram.svg'
 import Linkedin from '../../../public/assets/linkedin.svg'
 import Mail from '../../../public/assets/mail.svg'
 import Up from '../../../public/assets/up.svg'
+import Link from "next/link"
 
 const linksFooter = [
     {
@@ -74,29 +75,29 @@ export function Footer() {
     return <FooterContainer>
         <FooterGrid >
             <div className="item1">
-                <a href="/">
+                <Link href="/">
                     <img src="https://lacreisaude.com.br/_next/static/media/global-logo.e41aea7b.svg" alt="" />
-                </a>
+                </Link>
                 <div className="socialMedia">
-                    <a href="https://www.facebook.com/lacrei.saude/">
+                    <Link href="https://www.facebook.com/lacrei.saude/">
                         <Facebook alt='Facebook' />
-                    </a>
-                    <a href="https://www.instagram.com/lacrei.saude">
+                    </Link>
+                    <Link href="https://www.instagram.com/lacrei.saude">
                         <Instagram alt='Instagram' />
-                    </a>
-                    <a href="https://www.linkedin.com/company/lacrei">
+                    </Link>
+                    <Link href="https://www.linkedin.com/company/lacrei">
                         <Linkedin alt='LinkedIn' />
-                    </a>
-                    <a href="malito:contato@lacreisaude.com.br" target="_blank" title="E-mail site externo - abrirá uma nova janela com e e-mail do Lacrei Saúde">
+                    </Link>
+                    <Link href="malito:contato@lacreisaude.com.br" target="_blank" title="E-mail site externo - abrirá uma nova janela com e e-mail do Lacrei Saúde">
                         <Mail alt='Mail' />
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className="columnLinks item2">
                 {linksFooter.map(col => {
                     return <div key={col.title} className="links">
                         {col.title}
-                        {col.linkList.map(link => <a href={link.url} key={link.title}>{link.title}</a>)}
+                        {col.linkList.map(link => <Link href={link.url} key={link.title}>{link.title}</Link>)}
                     </div>
                 })}
             </div>
