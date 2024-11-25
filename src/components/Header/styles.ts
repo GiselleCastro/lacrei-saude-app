@@ -15,7 +15,7 @@ export const HeaderContainer = styled.header.withConfig({
   width: 100%;
 
   .desktop {
-    @media (max-width: 860px) {
+    @media (max-width: 859px) {
       display: none;
     }
 
