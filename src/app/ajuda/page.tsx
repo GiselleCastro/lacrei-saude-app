@@ -15,5 +15,6 @@ export default function Help() {
         content='Conectamos pessoas LGBTQIAPN+ com profissionais de saúde qualificados, proporcionando experiências de cuidado seguras e inclusivas.'
         img='https://lacreisaude.com.br/_next/static/media/person-with-flag-around.5a804bf9.png'
         description='Pessoa enrolada na bandeira que representa a comunidade L G B T Q I A P N mais'
+        data-testid='help-section'
     />
 }

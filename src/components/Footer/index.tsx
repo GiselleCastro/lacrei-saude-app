@@ -72,11 +72,11 @@ export function Footer() {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }
 
-    return <FooterContainer>
+    return <FooterContainer data-testid='footer'>
         <FooterGrid >
             <div className="item1">
                 <Link href="/">
-                    <img src="https://lacreisaude.com.br/_next/static/media/global-logo.e41aea7b.svg" alt="" />
+                    <img src="https://lacreisaude.com.br/_next/static/media/global-logo.e41aea7b.svg" alt="" data-testid="footer-logo" />
                 </Link>
                 <div className="socialMedia">
                     <Link href="https://www.facebook.com/lacrei.saude/">
@@ -113,7 +113,8 @@ export function Footer() {
             </div>
             <button
                 title="Voltar ao topo da página"
-                onClick={handlerUpPage}>
+                onClick={handlerUpPage}
+                data-testid="button-footer-top">
                 <Up />
             </button>
         </div>

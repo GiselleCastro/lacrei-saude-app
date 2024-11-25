@@ -5,7 +5,7 @@ import { IsVisibleType } from './styles'
 
 export function OptionsLogin({ isVisible }: IsVisibleType) {
     return (
-        <OptionsLoginContainer isVisible={isVisible}>
+        <OptionsLoginContainer isVisible={isVisible} data-testid='options-login'>
             <a href='https://paciente.lacreisaude.com.br/'> <Person /> Paciente</a>
             <div className='bar'></div>
             <a href='https://profissional.lacreisaude.com.br/'> <Cross /> Profissional</a>

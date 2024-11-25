@@ -26,7 +26,9 @@ export default function About() {
     })
 
     return (texts.map(text => {
-        return < Section {...text} key={text.title} />
+        return < Section {...text} key={text.title}
+            data-testid='about-section'
+        />
     })
     )
 }

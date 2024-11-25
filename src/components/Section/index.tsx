@@ -19,7 +19,7 @@ export function Section({ title, content, img, description }: SectionProps) {
                 <p>
                     {content}
                 </p>
-                <img src={img} alt={description} />
+                <img src={img} alt={description} data-testid='img' />
             </div>
         </SectionContainer>
     )

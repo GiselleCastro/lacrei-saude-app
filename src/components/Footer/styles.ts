@@ -33,6 +33,7 @@ export const FooterContainer = styled.footer`
             align-items: center;
             justify-content: center;
             background: transparent;
+            cursor: pointer;
             border: 2px solid ${props => props.theme["green-400"]};
             border-radius: 8px;
             min-width: 48px;
