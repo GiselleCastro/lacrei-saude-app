@@ -82,7 +82,7 @@ A aplicação foi deployed e está acessível - [Acesse aqui a aplicação inter
 ## Processo de Desenvolvimento
 
 1. **Planejamento**: Análise detalhada dos requisitos e do style guide.
-2. **Desenvolvimento**: Implementação dos componentes principais e roteamento.
+2. **Desenvolvimento**: Implementação dos componentes e roteamento.
 3. **Teste**: Realização de testes unitários e manuais para garantir a qualidade.
 4. **Deploy**: Deployment da aplicação para acesso público
 
