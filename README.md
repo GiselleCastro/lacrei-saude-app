@@ -73,7 +73,11 @@ A aplicação foi deployed e está acessível - [Acesse aqui a aplicação inter
 
 ### Versão Desktop
 
+![Demonstração das páginas web interativas para Lacrei Saúde versão desktop](demo/demo-desktop.gif)
+
 ### Versão Mobile
+
+![Demonstração das páginas web interativas para Lacrei Saúde versão mobile](demo/demo-mobile.gif)
 
 ## Processo de Desenvolvimento
 
