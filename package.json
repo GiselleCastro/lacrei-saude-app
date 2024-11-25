@@ -1,6 +1,6 @@
 {
   "name": "lacrei-saude",
-  "description": "Desafio de Voluntariado em Front End na Lacrei Saúde",
+  "description": "Projeto para Voluntariado em Front End na Lacrei Saúde",
   "version": "0.1.0",
   "private": true,
   "scripts": {
