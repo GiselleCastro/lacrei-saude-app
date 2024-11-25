@@ -6,16 +6,16 @@ const nextConfig: NextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ['lacreisaude.com.br'],
+    domains: ["lacreisaude.com.br"],
   },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
-    })
+      use: ["@svgr/webpack"],
+    });
 
-    return config
+    return config;
   },
 };
 

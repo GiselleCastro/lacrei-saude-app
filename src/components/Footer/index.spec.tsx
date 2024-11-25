@@ -1,57 +1,55 @@
-import "@testing-library/jest-dom"
-import { fireEvent, render, screen, waitFor } from "@testing-library/react"
-import { Footer } from './index';
+import "@testing-library/jest-dom";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { Footer } from "./index";
 
-describe('Footer', () => {
-    it('should render successful', () => {
+describe("Footer", () => {
+  it("should render successful", () => {
+    render(<Footer />);
 
-        render(<Footer />);
+    expect(screen.getByTestId("footer")).toBeVisible();
+  });
 
-        expect(screen.getByTestId('footer')).toBeVisible();
-    })
+  it("should top successful", () => {
+    window.scrollTo = jest.fn();
 
-    it('should top successful', () => {
-        window.scrollTo = jest.fn();
+    render(<Footer />);
 
-        render(<Footer />);
+    const buttonElement = screen.getByTestId("button-footer-top");
 
-        const buttonElement = screen.getByTestId('button-footer-top')
+    fireEvent.click(buttonElement);
 
-        fireEvent.click(buttonElement)
+    waitFor(() => {
+      expect(window.scrollTo).toHaveBeenCalledWith({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+  });
 
-        waitFor(() => {
-            expect(window.scrollTo).toHaveBeenCalledWith({
-                top: 0, left: 0, behavior: 'smooth'
-            })
-        })
-    })
+  describe("ResponsiveComponent Footer", () => {
+    it("desktop footer, with the logo", () => {
+      window.innerWidth = 1440;
+      fireEvent(window, new Event("resize"));
 
-    describe('ResponsiveComponent Footer', () => {
+      render(<Footer />);
 
-        it('desktop footer, with the logo', () => {
-            window.innerWidth = 1440
-            fireEvent(window, new Event('resize'))
+      waitFor(() => {
+        const logo = screen.getByTestId("footer-logo");
+        expect(logo).toBeVisible();
+      });
+    });
 
-            render(<Footer />)
+    it("mobile footer, without the logo", () => {
+      window.innerWidth = 360;
+      fireEvent(window, new Event("resize"));
 
-            waitFor(() => {
-                const logo = screen.getByTestId('footer-logo')
-                expect(logo).toBeVisible()
-            })
-        })
+      render(<Footer />);
 
-        it('mobile footer, without the logo', () => {
-            window.innerWidth = 360
-            fireEvent(window, new Event('resize'))
-
-            render(<Footer />)
-
-            waitFor(() => {
-                const logo = screen.getByTestId('footer-logo')
-                expect(logo).not.toBeVisible()
-            })
-        })
-    })
+      waitFor(() => {
+        const logo = screen.getByTestId("footer-logo");
+        expect(logo).not.toBeVisible();
+      });
+    });
+  });
 });
-
-

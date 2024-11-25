@@ -1,13 +1,13 @@
-import type { Config } from 'jest'
-import nextJest from 'next/jest.js'
- 
+import type { Config } from "jest";
+import nextJest from "next/jest.js";
+
 const createJestConfig = nextJest({
-  dir: './',
-})
+  dir: "./",
+});
 
 const config: Config = {
   testEnvironment: "jest-environment-jsdom",
-  
+
   collectCoverage: true,
 
   clearMocks: true,
@@ -23,7 +23,7 @@ const config: Config = {
   coverageProvider: "babel",
   coverageReporters: ["json", "text", "lcov", "clover"],
 };
-  
+
 const jestConfig = async () => {
   const nextJestConfig = await createJestConfig(config)();
   return {
@@ -35,4 +35,4 @@ const jestConfig = async () => {
   };
 };
 
-export default jestConfig
+export default jestConfig;

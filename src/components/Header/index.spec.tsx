@@ -1,74 +1,69 @@
-import "@testing-library/jest-dom"
-import { fireEvent, render, screen, waitFor } from "@testing-library/react"
-import { Header } from './index';
+import "@testing-library/jest-dom";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { Header } from "./index";
 
-describe('Header', () => {
-    it('should render successful', () => {
+describe("Header", () => {
+  it("should render successful", () => {
+    render(<Header />);
 
-        render(<Header />);
+    const mainElement = screen.getByTestId("header");
 
-        const mainElement = screen.getByTestId('header')
+    expect(mainElement).toBeInTheDocument();
+  });
 
-        expect(mainElement).toBeInTheDocument();
-    })
+  it("should render successful", () => {
+    render(<Header />);
 
-    it('should render successful', () => {
+    const buttonElement = screen.getByTestId("button-login-desktop");
 
-        render(<Header />);
+    expect(buttonElement).toBeVisible();
 
-        const buttonElement = screen.getByTestId('button-login-desktop')
+    fireEvent.click(buttonElement);
 
-        expect(buttonElement).toBeVisible();
+    waitFor(() => {
+      const optionsLoginElement = screen.queryByTestId("button-ptions-login");
 
-        fireEvent.click(buttonElement)
+      expect(optionsLoginElement).toBeVisible();
 
-        waitFor(() => {
+      fireEvent.click(buttonElement);
 
-            const optionsLoginElement = screen.queryByTestId('button-ptions-login')
+      expect(optionsLoginElement).not.toBeVisible();
+    });
+  });
 
-            expect(optionsLoginElement).toBeVisible()
+  describe("ResponsiveComponent Header", () => {
+    it("desktop header visible", () => {
+      window.innerWidth = 1440;
+      fireEvent(window, new Event("resize"));
 
-            fireEvent.click(buttonElement)
+      render(<Header />);
 
-            expect(optionsLoginElement).not.toBeVisible()
-        })
-    })
+      waitFor(() => {
+        const headerDesktop = screen.getByTestId("header-desktop");
 
-    describe('ResponsiveComponent Header', () => {
+        const headerMobile = screen.getByTestId("button-login-mobile");
 
-        it('desktop header visible', () => {
-            window.innerWidth = 1440
-            fireEvent(window, new Event('resize'))
+        expect(headerDesktop).toBeVisible();
 
-            render(<Header />)
+        expect(headerMobile).not.toBeVisible();
+      });
+    });
 
-            waitFor(() => {
-                const headerDesktop = screen.getByTestId('header-desktop')
+    it("mobile header visible", () => {
+      window.innerWidth = 360;
+      fireEvent(window, new Event("resize"));
 
-                const headerMobile = screen.getByTestId('button-login-mobile')
+      render(<Header />);
 
-                expect(headerDesktop).toBeVisible()
+      waitFor(() => {
+        const headerMobile = screen.getByTestId("button-login-mobile");
 
-                expect(headerMobile).not.toBeVisible()
-            })
-        })
+        const headerDesktop = screen.getByTestId("header-desktop");
 
-        it('mobile header visible', () => {
-            window.innerWidth = 360
-            fireEvent(window, new Event('resize'))
+        expect(headerMobile).toBeVisible();
 
-            render(<Header />)
-
-            waitFor(() => {
-                const headerMobile = screen.getByTestId('button-login-mobile')
-
-                const headerDesktop = screen.getByTestId('header-desktop')
-
-                expect(headerMobile).toBeVisible()
-
-                expect(headerDesktop).not.toBeVisible()
-            })
-        })
-    })
+        expect(headerDesktop).not.toBeVisible();
+      });
+    });
+  });
 });
-

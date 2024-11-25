@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 * {
@@ -23,8 +23,8 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: ${props => props.theme.white};
-    color: ${props => props.theme.black};
+    background: ${(props) => props.theme.white};
+    color: ${(props) => props.theme.black};
     --webkit-font-smoothing: antialiased;
 }
 
@@ -33,4 +33,4 @@ body, input, textarea, button {
     font-weight: 400;
     font-size: 1rem;
 }
-`
+`;
